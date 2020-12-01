@@ -1,1 +1,1 @@
-worker: python Diebot/dieBot.py
+worker: python diceBot/dieBot.py
