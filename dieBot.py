@@ -54,7 +54,7 @@ async def on_message(msg):
             if msg.content[1:5] == 'd100':
                 await msg.channel.send(str(rollDice(num,100,0)))
 
-            if msg.content[1] == 'd':
+            elif msg.content[1] == 'd':
                 if str(msg.author)[:14] == 'JugglingJester':
                     await msg.channel.send('1')
                 elif len(msg.content) > 4:
