@@ -33,9 +33,7 @@ async def on_message(msg):
         if isint(msg.content[1]):
             num = int(msg.content[:2])
             if msg.content[2] == 'd':
-                if str(msg.author)[:14] == 'JugglingJester':
-                    await msg.channel.send('1')
-                elif len(msg.content) > 5:
+                if len(msg.content) > 5:
                     if msg.content[5] == '+':
                         if len(msg.content) > 7:
                             await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6:8])))
@@ -55,9 +53,7 @@ async def on_message(msg):
                 await msg.channel.send(str(rollDice(num,100,0)))
 
             elif msg.content[1] == 'd':
-                if str(msg.author)[:14] == 'JugglingJester':
-                    await msg.channel.send('1')
-                elif len(msg.content) > 4:
+                if len(msg.content) > 4:
                     if msg.content[4] == '+':
                         if len(msg.content) > 6:
                             await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5:7])))
