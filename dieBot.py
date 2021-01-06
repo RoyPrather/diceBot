@@ -63,7 +63,7 @@ async def on_message(msg):
         #is the second index a d    
         elif msg.content[1] == 'd':
             #is the third and forth indexs a number and is the fith index a + sign
-            if isint(msg.content[2:4]) msg.content[4] == '+':
+            if isint(msg.content[2:4]) and msg.content[4] == '+':
                 #is there a two digit number fallowing the + sign
                 if isint(msg.content[5:7]):
                     await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5:7])))
