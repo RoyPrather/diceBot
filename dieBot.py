@@ -67,7 +67,7 @@ async def on_message(msg):
                     elif isint(msg.content[2]):
                         await msg.channel.send(str(rollDice(num,msg.content[2],0)))
 
-                elif msg.content([2:4]):    
+                elif isint(msg.content[2:4]):    
                     await msg.channel.send(str(rollDice(num,msg.content[2:4],0)))
 
 client.run(TOKEN)
