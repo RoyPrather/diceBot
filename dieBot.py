@@ -36,7 +36,7 @@ async def on_message(msg):
             #is the third index a d
             if msg.content[2] == 'd':
                 #is the fouth and fith index a number the sixth index a + sign
-                if isint(msg.content[3:5) msg.content[5] == '+':
+                if isint(msg.content[3:5]) msg.content[5] == '+':
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[6:8]):
                         await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6:8])))
