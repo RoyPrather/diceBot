@@ -35,18 +35,18 @@ async def on_message(msg):
             if msg.content[2] == 'd':
                 if len(msg.content) > 5:
                     if msg.content[5] == '+':
-                        if len(msg.content) > 7:
+                        if len(msg.content) > 7 and isint(msg.content[6:8]):
                             await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6:8])))
-                        else:
+                        elif isint(msg.content[6]):
                             await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6])))
                     elif isint(msg.content[3]) and msg.content[4] == '+':
-                        if len(msg.content) > 6:
+                        if len(msg.content) > 6 and isint(msg.content[5:7]):
                             await msg.channel.send(str(rollDice(num,msg.content[3],msg.content[5:7])))
-                        else:
+                        elif isint(msg.content[5]):
                             await msg.channel.send(str(rollDice(num,msg.content[3],msg.content[5])))
-                    else:
+                    elif isint(msg.content[3]):
                         await msg.channel.send(str(rollDice(num,msg.content[3],0)))
-                else:    
+                elif isint(msg.content[3:5]):    
                     await msg.channel.send(str(rollDice(num,msg.content[3:5],0)))
         else:
             if msg.content[1:5] == 'd100':
@@ -55,19 +55,19 @@ async def on_message(msg):
             elif msg.content[1] == 'd':
                 if len(msg.content) > 4:
                     if msg.content[4] == '+':
-                        if len(msg.content) > 6:
+                        if len(msg.content) > 6 and isint(msg.content[5:7]):
                             await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5:7])))
-                        else:
+                        elif isint(msg.content[5]):
                             await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5])))
                     elif isint(msg.content[2]) and msg.content[3] == '+':
-                        if len(msg.content) > 5:
+                        if len(msg.content) > 5 and isint(msg.content[4:6]):
                             await msg.channel.send(str(rollDice(num,msg.content[2],msg.content[4:6])))
-                        else:
+                        elif isint(msg.content[4]):
                             await msg.channel.send(str(rollDice(num,msg.content[2],msg.content[4])))
-                    else:
+                    elif isint(msg.content[2]):
                         await msg.channel.send(str(rollDice(num,msg.content[2],0)))
 
-                else:    
+                elif msg.content([2:4]):    
                     await msg.channel.send(str(rollDice(num,msg.content[2:4],0)))
 
 client.run(TOKEN)
