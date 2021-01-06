@@ -72,20 +72,16 @@ async def on_message(msg):
             await msg.channel.send(str(rollDice(num,100,0)))
         #is the second index a d    
         elif msg.content[1] == 'd':
-            #is the third and forth indexs a number 
-            if isint(msg.content[2:4]): 
-                #is the fifth index a + sign
-                if isPlusInIndex(4,msg):
+            #is the third and forth indexs a number and there is a + sign in the fifth index
+            if isint(msg.content[2:4]) and isPlusInIndex(4,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[5:7]):
                         await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5:7])))
                     #is there a one digit number fallowingt the + sign
                     elif isint(msg.content[5]):
                         await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5])))
-            #is the third index a number    
-            elif isint(msg.content[2]):
-                #is the fourth index a +
-                if isPlusInIndex(3,msg):
+            #is the third index a number and fallowed by a + sign  
+            elif isint(msg.content[2]) and isPlusInIndex(3,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[4:6]):
                         await msg.channel.send(str(rollDice(num,msg.content[2],msg.content[4:6])))
