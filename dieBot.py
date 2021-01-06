@@ -61,7 +61,7 @@ async def on_message(msg):
                     elif isint(msg.content[5]):
                         await msg.channel.send(str(rollDice(num,msg.content[3],msg.content[5])))
                 #is there a two digit number with no + sign
-                if isint(msg.content[3:5]):
+                elif isint(msg.content[3:5]):
                     await msg.channel.send(str(rollDice(num,msg.content[3:5],0)))
                 #is there a one digit number with no + sign
                 elif isint(msg.content[3]):    
