@@ -6,9 +6,9 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
 
-def isPlusInIndex(x):
+def isPlusInIndex(x,m):
     try:
-        if msg.content[x] == "+":
+        if m.content[x] == "+":
             return True
         else:
             return False
@@ -45,7 +45,7 @@ async def on_message(msg):
             #is the third index a d
             if msg.content[2] == 'd':
                 #is the fouth and fith index a number the sixth index a + sign
-                if isint(msg.content[3:5]) and isPlusInIndex(5):
+                if isint(msg.content[3:5]) and isPlusInIndex(5,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[6:8]):
                         await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6:8])))
@@ -53,7 +53,7 @@ async def on_message(msg):
                     elif isint(msg.content[6]):
                         await msg.channel.send(str(rollDice(num,msg.content[3:5],msg.content[6])))
                 #is the forth index a number and is the fith index a + sign
-                elif isint(msg.content[3]) and isPlusInIndex(4):
+                elif isint(msg.content[3]) and isPlusInIndex(4,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[5:7]):
                         await msg.channel.send(str(rollDice(num,msg.content[3],msg.content[5:7])))
@@ -75,7 +75,7 @@ async def on_message(msg):
             #is the third and forth indexs a number 
             if isint(msg.content[2:4]): 
                 #is the fifth index a + sign
-                if isPlusInIndex(4):
+                if isPlusInIndex(4,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[5:7]):
                         await msg.channel.send(str(rollDice(num,msg.content[2:4],msg.content[5:7])))
@@ -85,7 +85,7 @@ async def on_message(msg):
             #is the third index a number    
             elif isint(msg.content[2]):
                 #is the fourth index a +
-                if isPlusInIndex(3):
+                if isPlusInIndex(3,msg):
                     #is there a two digit number fallowing the + sign
                     if isint(msg.content[4:6]):
                         await msg.channel.send(str(rollDice(num,msg.content[2],msg.content[4:6])))
