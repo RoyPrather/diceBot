@@ -54,10 +54,10 @@ async def on_message(msg):
         return
 #----------------------------Roll Stats------------------------------
     if (msg.content[:9] == "rollstats"):
-        msg.channel.send(str(rollStats()))
+        await msg.channel.send(str(rollStats()))
 
     if (msg.content[:12] == "rollallstats"):
-        msg.channel.send(str(rollAllStats()))
+        await msg.channel.send(str(rollAllStats()))
 
 #-----------------------------99d99+99-------------------------------- 
    #is the first index a number 
