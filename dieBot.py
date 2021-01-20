@@ -28,7 +28,7 @@ def rollDice(num,faces,plus):
         acc += random.randint(1,int(faces))
     return(acc + int(plus))
 
-def rollStats(msg):
+async def rollStats(msg):
     list = [None] * 4
     for i in range(4):
         list[i] = rollDice(1,6,0)
@@ -39,7 +39,7 @@ def rollStats(msg):
         acc += list[1]
     await msg.send(str(acc))
 
-def rollAllStats(msg):
+async def rollAllStats(msg):
     for i in range(6):
         rollStats(msg)
 
