@@ -32,12 +32,12 @@ async def rollStats(msg):
     list = [None] * 4
     for i in range(4):
         list[i] = rollDice(1,6,0)
-    await msg.send(str(list[0])+" "+str(list[1])+" "+str(list[2])+" "+str(list[3]))
+    await msg.channel.send(str(list[0])+" "+str(list[1])+" "+str(list[2])+" "+str(list[3]))
     list.sort(reverse = True)
     acc = 0
     for i in range(3):
         acc += list[1]
-    await msg.send(str(acc))
+    await msg.channel.send(str(acc))
 
 async def rollAllStats(msg):
     for i in range(6):
