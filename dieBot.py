@@ -41,7 +41,7 @@ async def rollStats(msg):
 
 async def rollAllStats(msg):
     for i in range(6):
-        rollStats(msg)
+        await rollStats(msg)
 
 
 @client.event
