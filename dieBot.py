@@ -32,11 +32,12 @@ def rollStats():
     list = [None] * 4
     for i in range(4):
         list[i] = rollDice(1,6,0)
+    temp =str(list[0])+" "+str(list[1])+" "+str(list[2])+" "+str(list[3]) +" :"
     list.sort(reverse = True)
     acc = 0
     for i in range(3):
         acc += list[i]
-    return(str(list[0])+" "+str(list[1])+" "+str(list[2])+" "+str(list[3]) +" :"+ str(acc))
+    return(temp + str(acc))
 
 def rollAllStats():
     acc = ""
