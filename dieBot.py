@@ -35,7 +35,7 @@ def rollStats(msg):
     msg.channel.send(str(list[0]) + " " + str(list[1]) + " " + str(list[2]) + " " + str(list[3]))
     list.sort(reverse = True)
     acc = 0
-    for i range(3):
+    for i in range(3):
         acc += list[1]
     msg.channel.send(str(acc))
 
