@@ -36,7 +36,7 @@ async def rollStats(msg):
     list.sort(reverse = True)
     acc = 0
     for i in range(3):
-        acc += list[1]
+        acc += list[i]
     await msg.channel.send(str(acc))
 
 async def rollAllStats(msg):
