@@ -28,20 +28,21 @@ def rollDice(num,faces,plus):
         acc += random.randint(1,int(faces))
     return(acc + int(plus))
 
-def rollStats(msg):
+def rollStats():
     list = [None] * 4
     for i in range(4):
         list[i] = rollDice(1,6,0)
-    #msg.channel.send(str(list[0]) + " " + str(list[1]) + " " + str(list[2]) + " " + str(list[3]))
     list.sort(reverse = True)
     acc = 0
     for i in range(3):
         acc += list[1]
-    msg.channel.send(str(acc))
+    return(acc)
 
-def rollAllStats(msg):
+def rollAllStats():
+    acc = ''
     for i in range(6):
-        rollStats(msg)
+        acc += str(rollStats()) + " "
+    return(acc)
 
 @client.event
 async def on_ready():
@@ -53,10 +54,10 @@ async def on_message(msg):
         return
 #----------------------------Roll Stats------------------------------
     if (msg.content[:9] == "rollstats"):
-        rollStats(msg)
+        msg.channel.send(str(rollStats()))
 
     if (msg.content[:12] == "rollallstats"):
-        rollAllStats(msg)
+        msg.channel.send(str(rollAllStats()))
 
 #-----------------------------99d99+99-------------------------------- 
    #is the first index a number 
